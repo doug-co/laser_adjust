@@ -3,6 +3,7 @@ defmodule LaserAdjust.Mixfile do
 
   def project do
     [app: :laser_adjust,
+     escript: escript_config,
      version: "0.1.0",
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
@@ -29,4 +30,9 @@ defmodule LaserAdjust.Mixfile do
   defp deps do
     []
   end
+
+  defp escript_config do
+    [ main_module: LaserAdjust.CLI ]
+  end
+
 end
