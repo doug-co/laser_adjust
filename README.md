@@ -1,10 +1,10 @@
-# laser_adjust
-Combines laser level adjustment data with CNC compensation table, and outputs a new compensation table.
 # LaserAdjust
 
-**TODO: Add description**
+Combines laser level adjustment data with CNC compensation table, and outputs a new compensation table.
 
 ## Installation
+This is a command line tool...
+
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
 
