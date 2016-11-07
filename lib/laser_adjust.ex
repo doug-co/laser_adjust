@@ -1,0 +1,2 @@
+defmodule LaserAdjust do
+end
