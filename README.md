@@ -84,5 +84,5 @@ usage: laser_adjust path [--quiet|-q] [--force|-f]
   following case it will process ALX and ALY files, but skip the axis if the compensation
   file is X.mp or Y.mp.
 
-  `laser_adjust --axis X --axis Y --type 8055
+  `laser_adjust --axis X --axis Y --type 8055`
   
