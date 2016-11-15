@@ -1,0 +1,10 @@
+API Linear Error Compensation Table
+Position   	Unidirectional Avg Error
+ 0.000000	-0.000055
+ 5.000000	-0.000047
+10.000000	-0.000075
+15.000000	-0.000052
+20.000000	 0.000002
+25.000000	-0.000034
+
+API Linear Standard Deviation Error Table

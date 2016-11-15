@@ -132,6 +132,9 @@ defmodule LaserAdjust.CLI do
     end
   end
 
+  @doc """
+  given a path, make sure it exists, returns a { path: <path> } tuple
+  """
   def path([]), do: { :path, "." }
   def path(value) do
     if File.dir?(value) do
@@ -142,30 +145,34 @@ defmodule LaserAdjust.CLI do
   end
 
   @doc """
-  
+  Process list of axis files read files aggregate and generate output file.
   """
   def process(opts = %{ axis: axis_list }, files) when axis_list == [] do
     process(Enum.into([ axis: Enum.map(files, &(&1[:axis]))], opts), files)
   end
   def process(opts, files) do
-    IO.puts "Process B:"
-#    IO.inspect opts
-#    IO.inspect files
-
-    selected_axis = opts[:axis]
-    |> Enum.map(&({&1, true}))
-    |> Enum.into(%{})
-
+    selected_axis = Enum.map(opts[:axis], &({&1, true})) |> Enum.into(%{})
     files
     |> Enum.filter(&(selected_axis[&1[:axis]]))
-    |> IO.inspect
     |> Enum.each(&(process_axis(&1)))
   end
 
+  @doc """
+  process an axis and generate a new compensation file
+  """
   def process_axis(axis) do
-    IO.puts "Process Axis:"
-    axis |> IO.inspect
+    IO.puts "Process Axis: #{IO.inspect axis}"
+    adjustment = LaserAdjust.File.load_adjustments(axis[:laser])
+    |> LaserAdjust.File.standardize_units(:loc)
+    |> IO.inspect
+
+    # the drop the high and low adjustment values ( this need to be done in a different way
+    # if high and low values exist in compensation table and laser adjustments, we should
+    # use them.  But if they are missing in the laser data, we should ignore them
+
+#    compensation =
+    # load compensation table
+    # perform adjustment
+    # write compensation table
   end
 end
-
-#LaserAdjust.CLI.main(["-a", "X", "-q", "-a", "Y", "--no-quiet", "-t", "8055", "-f", "/ab/c"])

@@ -19,4 +19,5 @@ erl_crash.dump
 
 # ignore emacs backup and state files
 *~
-#*#
+\#*#
+.\#*

@@ -57,14 +57,14 @@ defmodule LaserAdjust.CLI_Test do
     assert build_file_list("./example/8065") == result
   end
 
-  test "process with no axis list" do
-    opts = %{ path: "examples/8055", axis: [] }
-    files = [ "ALX", "ALY", "X.pos", "Y.pos" ] |> LaserAdjust.File.filter
-    LaserAdjust.CLI.process(opts, files)
+  # test "process with no axis list" do
+  #   opts = %{ path: "examples/8055", axis: [] }
+  #   files = [ "ALX", "ALY", "X.pos", "Y.pos" ] |> LaserAdjust.File.filter
+  #   LaserAdjust.CLI.process(opts, files)
 
-    opts = %{ path: "examples/8055", axis: ["X"] }
-    files = [ "ALX", "ALY", "X.pos", "Y.pos" ] |> LaserAdjust.File.filter
-    LaserAdjust.CLI.process(opts, files)
+  #   opts = %{ path: "examples/8055", axis: ["X"] }
+  #   files = [ "ALX", "ALY", "X.pos", "Y.pos" ] |> LaserAdjust.File.filter
+  #   LaserAdjust.CLI.process(opts, files)
     
-  end
+  # end
 end
