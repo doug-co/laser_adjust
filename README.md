@@ -50,8 +50,9 @@ laser_adjust is a commandline program, options are described below.
 
 
 
-```usage: laser_adjust path [--quiet|-q] [--force|-f]
-                            [--axis|-a {axis-name A-Z}] [--type|-t {8055|8065}]
+```
+usage: laser_adjust path [--quiet|-q] [--force|-f]
+                         [--axis|-a {axis-name A-Z}] [--type|-t {8055|8065}]
 ```
   path is a directory which specifies the location to find the compensation and
   adjustment files, as well as where updated files will be created.  If no path is
